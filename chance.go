@@ -45,7 +45,7 @@ func Merge(cs ...<-chan interface{}) <-chan interface{} {
     return out
 }
 
-func Channelify(items []interface{}) <-chan interface{} {
+func Flatten(items []interface{}) <-chan interface{} {
 	ch := make(chan interface{})
 	go func() {
 		defer close(ch)
